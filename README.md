@@ -82,6 +82,13 @@ SecurityVibe/
 | 24 | Postgres extensions & pg_graphql | [25-postgres-extensions](docs/categories/25-postgres-extensions.md) |
 | 25 | Security headers & cookies | [26-security-headers-cookies](docs/categories/26-security-headers-cookies.md) |
 | 26 | Business logic & IDOR | [27-business-logic-idor](docs/categories/27-business-logic-idor.md) |
+| 27 | Email infrastructure (SPF/DKIM/DMARC) | [28-email-infrastructure](docs/categories/28-email-infrastructure.md) |
+| 28 | Compliance & audit tables | [29-compliance-audit-tables](docs/categories/29-compliance-audit-tables.md) |
+| 29 | PostgREST info disclosure | [30-postgrest-info-disclosure](docs/categories/30-postgrest-info-disclosure.md) |
+
+## Examples
+
+- [Retest playbook template](examples/retest-playbook-template.md) — verify fixes after an audit (PASS/FAIL)
 
 ## References
 

@@ -41,6 +41,13 @@
 | 25 | Postgres Extensions & pg_graphql | [categories/25-postgres-extensions.md](categories/25-postgres-extensions.md) |
 | 26 | Security Headers & Cookies | [categories/26-security-headers-cookies.md](categories/26-security-headers-cookies.md) |
 | 27 | Business Logic & IDOR | [categories/27-business-logic-idor.md](categories/27-business-logic-idor.md) |
+| 28 | Email Infrastructure (SPF/DKIM/DMARC) | [categories/28-email-infrastructure.md](categories/28-email-infrastructure.md) |
+| 29 | Compliance & Audit Tables | [categories/29-compliance-audit-tables.md](categories/29-compliance-audit-tables.md) |
+| 30 | PostgREST Info Disclosure | [categories/30-postgrest-info-disclosure.md](categories/30-postgrest-info-disclosure.md) |
+
+## Examples
+
+- [Retest playbook template](../examples/retest-playbook-template.md) — PASS/FAIL verification after remediation
 
 ## References
 

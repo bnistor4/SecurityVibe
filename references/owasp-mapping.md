@@ -14,7 +14,7 @@ Maps SecurityVibe categories to OWASP Top 10 (2021), OWASP API Security Top 10 (
 | A06 Vulnerable & Outdated Components | [01-advisory-gate](../docs/categories/01-version-advisory-gate.md), [16-supply-chain](../docs/categories/16-supply-chain.md) |
 | A07 Identification & Auth Failures | [03-auth](../docs/categories/03-supabase-auth.md), [24-account-takeover](../docs/categories/24-account-takeover.md) |
 | A08 Software & Data Integrity Failures | [16-supply-chain](../docs/categories/16-supply-chain.md), [07-route-handlers-api](../docs/categories/07-route-handlers-api.md) (webhooks) |
-| A09 Security Logging & Monitoring Failures | [23-logging-monitoring](../docs/categories/23-logging-monitoring.md) |
+| A09 Security Logging & Monitoring Failures | [23-logging-monitoring](../docs/categories/23-logging-monitoring.md), [29-compliance-audit-tables](../docs/categories/29-compliance-audit-tables.md) |
 | A10 Server-Side Request Forgery | [14-ssrf](../docs/categories/14-ssrf-outbound.md), [22-edge-functions](../docs/categories/22-supabase-edge-functions.md), [25-postgres-extensions](../docs/categories/25-postgres-extensions.md) (pg_net) |
 
 ## OWASP API Security Top 10 (2023)
@@ -29,7 +29,7 @@ Maps SecurityVibe categories to OWASP Top 10 (2021), OWASP API Security Top 10 (
 | API6 Unrestricted Access to Sensitive Business Flows | [27-business-logic-idor](../docs/categories/27-business-logic-idor.md) |
 | API7 Server-Side Request Forgery | [14-ssrf](../docs/categories/14-ssrf-outbound.md) |
 | API8 Security Misconfiguration | [11-vercel](../docs/categories/11-vercel-deployment.md), [26-headers-cookies](../docs/categories/26-security-headers-cookies.md) |
-| API9 Improper Inventory Management | [02-inventory](../docs/categories/02-project-inventory.md), [11-vercel](../docs/categories/11-vercel-deployment.md) (preview/old deploys) |
+| API9 Improper Inventory Management | [02-inventory](../docs/categories/02-project-inventory.md), [11-vercel](../docs/categories/11-vercel-deployment.md) (preview/old deploys), [30-postgrest-info-disclosure](../docs/categories/30-postgrest-info-disclosure.md) |
 | API10 Unsafe Consumption of APIs | [07-route-handlers-api](../docs/categories/07-route-handlers-api.md) (webhooks), [14-ssrf](../docs/categories/14-ssrf-outbound.md) |
 
 ## OWASP Top 10 for LLM Applications

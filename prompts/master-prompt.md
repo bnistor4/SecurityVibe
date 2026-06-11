@@ -59,5 +59,8 @@ If no evidence is found, write:
 | 22 | [22-postgres-extensions.md](22-postgres-extensions.md) | Postgres extensions & pg_graphql |
 | 23 | [23-security-headers-cookies.md](23-security-headers-cookies.md) | Security headers & cookies |
 | 24 | [24-business-logic-idor.md](24-business-logic-idor.md) | Business logic & IDOR |
+| 25 | [25-email-infrastructure.md](25-email-infrastructure.md) | Email infrastructure (SPF/DKIM/DMARC) |
+| 26 | [26-compliance-audit-tables.md](26-compliance-audit-tables.md) | Compliance & audit tables |
+| 27 | [27-postgrest-info-disclosure.md](27-postgrest-info-disclosure.md) | PostgREST info disclosure |
 
 Also read [../AGENTS.md](../AGENTS.md) before running prompts.

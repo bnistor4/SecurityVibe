@@ -14,6 +14,10 @@
 - [ ] Password reset revealing whether email exists
 - [ ] MFA required only in UI, not server-side for sensitive operations
 - [ ] Logout client-only; server cookies/session not cleared
+- [ ] Refresh token reuse accepted after rotation (no reuse detection / token family revocation)
+- [ ] Access JWT still valid for PostgREST/API for long window after logout (no short TTL or revocation strategy)
+- [ ] Weak password policy: short passwords, common passwords, no strength check
+- [ ] Login/signup/password-reset without rate limiting or CAPTCHA
 - [ ] Session refresh not propagated to Server Components
 - [ ] Duplicated auth state across Supabase, custom cookies, local DB
 - [ ] OAuth callback linking identity without verifying existing account ownership
@@ -46,6 +50,10 @@ rg -n 'raw_user_meta_data|user_metadata|app_metadata|auth\.jwt' supabase app src
 - MFA/AAL for sensitive actions: export, email change, password change, admin, billing
 - Rate limit login/OTP/email wrappers; CAPTCHA where appropriate
 - Complete server-side logout: invalidate and clear cookies on server and browser
+- Enable refresh token rotation and reuse detection in Supabase Auth / GoTrue (verify applied in target environment)
+- Short access-token TTL where compatible with UX; document acceptable post-logout JWT window for stateless tokens
+- Password policy: minimum length (8–12+), block common passwords, optional strength meter
+- Rate limit login, signup, OTP, magic link, and recover endpoints per IP/account
 
 ## Regression tests
 
@@ -55,6 +63,9 @@ rg -n 'raw_user_meta_data|user_metadata|app_metadata|auth\.jwt' supabase app src
 - [ ] OAuth redirect to external destination rejected or normalized
 - [ ] Password reset/magic link: no email enumeration
 - [ ] Sensitive action fails with insufficient AAL
+- [ ] Reused refresh token after rotation returns error (ideally revokes token family)
+- [ ] Weak passwords (`123456`, `password`, etc.) rejected at signup
+- [ ] Repeated failed logins trigger 429, backoff, or CAPTCHA (staging, limited attempts)
 
 ## Related
 

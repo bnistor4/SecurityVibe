@@ -15,6 +15,9 @@
 - [ ] Tailwind class injection from user input
 - [ ] Unvalidated URLs in `href`/`src`
 - [ ] Tabnabbing on external links
+- [ ] Third-party `<script src="...">` without Subresource Integrity (`integrity` + `crossorigin`)
+- [ ] Third-party scripts loaded from unpinned / non-versioned CDN URLs
+- [ ] `next/script` external URLs without integrity where SRI is supported
 
 ## Detection
 
@@ -22,6 +25,7 @@
 rg -n 'dangerouslySetInnerHTML|innerHTML|outerHTML|marked|remark|rehype|mdx|sanitize|DOMPurify|Script|beforeInteractive' app src components
 rg -n 'Content-Security-Policy|frame-ancestors|Referrer-Policy|Permissions-Policy|X-Frame-Options|headers\(' next.config.* app src
 rg -n 'className=.*\$\{|className=\{|href=\{|src=\{|target="_blank"' app src components
+rg -n '<script[^>]+src=|next/script|integrity=|crossorigin' app src components
 ```
 
 ## Mitigations
@@ -33,6 +37,15 @@ rg -n 'className=.*\$\{|className=\{|href=\{|src=\{|target="_blank"' app src com
 - URL validation with protocol/host allowlist
 - Map user input to static Tailwind classes — never interpolate arbitrary classes
 - External links: `rel="noopener noreferrer"`
+- Add SRI (`integrity` + `crossorigin="anonymous"`) for third-party scripts where the vendor publishes hashes
+- Pin CDN URLs to versioned paths; prefer self-hosting for critical static scripts
+- For `next/script`: use `integrity` when loading external scripts; avoid loading untrusted dynamic URLs
+
+## Regression tests
+
+- [ ] Third-party scripts in production HTML include `integrity` where feasible
+- [ ] Tampered CDN file fails to load (SRI mismatch) in browser test
+- [ ] User-supplied marker renders escaped in admin/dashboard paths
 
 ## Related
 

@@ -51,6 +51,10 @@ Many controls cannot be verified from git alone. Complete [categories/18-dashboa
 
 Implement tests from [categories/19-regression-test-suite.md](categories/19-regression-test-suite.md) for every confirmed finding.
 
+### 6. Retest after remediation
+
+Use [examples/retest-playbook-template.md](../examples/retest-playbook-template.md) to document PASS/FAIL verification per finding.
+
 ## Using with AI coding agents
 
 1. Add SecurityVibe to agent context or clone alongside your project.

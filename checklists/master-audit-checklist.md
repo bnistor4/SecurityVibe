@@ -38,6 +38,9 @@ Use with [docs/audit-workflow.md](../docs/audit-workflow.md). Check categories i
 - [ ] **25** Postgres extensions — SECURITY DEFINER, pg_graphql, pg_net, pgvector
 - [ ] **26** Security headers & cookies — baseline headers, cookie flags
 - [ ] **27** Business logic & IDOR — object/function authz, state, races
+- [ ] **28** Email infrastructure — SPF, DKIM, DMARC (DNS/dashboard)
+- [ ] **29** Compliance tables — append-only consents/audit, no user UPDATE/DELETE
+- [ ] **30** PostgREST disclosure — no schema hints in API errors
 
 ## Phase 5 — External & tests
 
@@ -49,6 +52,11 @@ Use with [docs/audit-workflow.md](../docs/audit-workflow.md). Check categories i
 - [ ] Reconciled versions against [CVE catalog](../references/nextjs-cve-catalog.md)
 - [ ] Coverage mapped via [OWASP mapping](../references/owasp-mapping.md)
 - [ ] Reviewed relevant [incident patterns](../references/incident-patterns.md)
+
+## Phase 6 — Retest (after remediation)
+
+- [ ] Retest playbook filled per finding: [examples/retest-playbook-template.md](../examples/retest-playbook-template.md)
+- [ ] Each closed finding has PASS with evidence or documented NOT APPLICABLE
 
 ## Deliverables
 

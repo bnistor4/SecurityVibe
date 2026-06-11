@@ -5,6 +5,8 @@
 - [ ] RLS enabled on every exposed table
 - [ ] Policies for `public` schema and `storage.objects`
 - [ ] Auth rate limits; IP forwarding if backend concentrates IPs
+- [ ] Refresh token rotation and reuse detection enabled (Auth settings)
+- [ ] Password strength / leaked-password protection if available
 - [ ] MFA settings per business requirements
 - [ ] Storage bucket public/private settings and policies
 - [ ] API keys: publishable vs secret/legacy anon/service_role separation
@@ -26,7 +28,7 @@
 ## External providers
 
 - [ ] Stripe/webhook signing secrets and idempotency
-- [ ] Email: domain auth, rate, unsubscribe, bounce handling
+- [ ] Email: SPF, DKIM, DMARC (see [28-email-infrastructure](28-email-infrastructure.md)), rate, unsubscribe, bounce handling
 - [ ] Analytics: consent, PII redaction
 - [ ] Error monitoring: token redaction, source map access
 - [ ] GitHub: branch protection, Actions permissions, Dependabot/SCA

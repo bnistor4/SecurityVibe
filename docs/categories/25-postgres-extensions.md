@@ -27,6 +27,8 @@ Supabase exposes powerful Postgres extensions. Misuse turns the database into an
 - [ ] Metadata enabling enumeration of other tenants' documents
 
 ### RPC / `SECURITY DEFINER` functions
+- [ ] RPC accepts `p_user_id` / `p_tenant_id` from client instead of `auth.uid()` / JWT claims
+- [ ] Upsert conflict target wrong — e.g. unique on `query_normalized` only, not `(user_id, query_normalized)` → cross-user overwrite
 - [ ] `SECURITY DEFINER` function with broad `EXECUTE` grant to `anon`/`authenticated`
 - [ ] Dynamic SQL built from unvalidated input (SQL injection inside function)
 - [ ] `search_path` not pinned in `SECURITY DEFINER` (function hijack via shadowing)
@@ -41,7 +43,8 @@ Supabase exposes powerful Postgres extensions. Misuse turns the database into an
 ## Detection
 
 ```bash
-rg -n 'security definer|create function|create or replace function|execute |grant execute|search_path' supabase migrations db sql
+rg -n 'security definer|create function|create or replace function|execute |grant execute|search_path|p_user_id|p_tenant_id|auth\.uid\(\)' supabase migrations db sql
+rg -n 'on conflict|unique \(|upsert' supabase migrations db sql
 rg -n 'pg_cron|cron\.schedule|pg_net|net\.http_(get|post)|http_post|pg_graphql|graphql\.|vector|embedding|<->|<=>' supabase migrations db sql
 ```
 
@@ -64,6 +67,8 @@ ORDER BY routine_schema, routine_name;
 
 ## Mitigations
 
+- Derive `user_id`/`tenant_id` from `auth.uid()` inside RPC — never trust `p_user_id` / `p_tenant_id` from the client.
+- Upsert `ON CONFLICT` targets must include user/tenant scope (e.g. `(user_id, query_normalized)`), not a global natural key alone.
 - For `SECURITY DEFINER`: pin `SET search_path = ''` (fully-qualified names), minimal grants, validated input, no dynamic SQL from user input.
 - Verify RLS is enforced for every table reachable via `pg_graphql` and `pgvector` search.
 - Tenant-filter vector search at query time; enable RLS on embedding tables.
@@ -76,6 +81,8 @@ ORDER BY routine_schema, routine_name;
 
 - [ ] GraphQL query as tenant A cannot traverse to tenant B rows
 - [ ] `SECURITY DEFINER` RPC rejects unauthorized caller and invalid input
+- [ ] User A cannot overwrite User B's row via RPC upsert on shared normalized key
+- [ ] RPC ignores client-supplied `p_user_id`; uses `auth.uid()` only
 - [ ] Vector search returns only caller-scoped documents
 - [ ] DB outbound request to disallowed host fails
 

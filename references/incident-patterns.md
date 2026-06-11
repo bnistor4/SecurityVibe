@@ -148,6 +148,46 @@ These are anonymized, generalized patterns representative of common Next.js + Su
 
 ---
 
+## P15 — Refresh token reuse after rotation
+
+**Pattern:** Old refresh tokens remain valid indefinitely; stolen refresh token works even after the user rotated sessions.
+
+**Detect:** Auth config for rotation/reuse detection; retest old token after successful refresh (authorized staging).
+
+**Prevent:** Enable refresh token rotation and reuse detection; shorten access-token TTL. → [03-auth](../docs/categories/03-supabase-auth.md)
+
+---
+
+## P16 — Consent record tampering (GDPR)
+
+**Pattern:** `user_consents` (or similar) allows UPDATE/DELETE; audit fields (`accepted_at`, `policy_version`) are mutable.
+
+**Detect:** RLS policies with UPDATE/DELETE on consent tables; PATCH succeeds on audit columns.
+
+**Prevent:** Append-only model; deny UPDATE/DELETE; immutability triggers. → [29-compliance](../docs/categories/29-compliance-audit-tables.md)
+
+---
+
+## P17 — PostgREST error hints leak schema
+
+**Pattern:** Invalid table/RPC requests return `hint` fields suggesting real names, mapping the API surface for scanners.
+
+**Detect:** Probe non-existent table/RPC names in staging; inspect if hints/column suggestions appear.
+
+**Prevent:** Restrict grants; generic client errors; remove legacy RPC. → [30-postgrest](../docs/categories/30-postgrest-info-disclosure.md)
+
+---
+
+## P18 — DMARC `p=none` on production mail domain
+
+**Pattern:** Domain sends auth/transactional email but DMARC stays at `p=none`; phishing and spoofing go unenforced.
+
+**Detect:** `dig TXT _dmarc.<domain>`; email provider domain verification status.
+
+**Prevent:** SPF + DKIM + DMARC with path to quarantine/reject. → [28-email](../docs/categories/28-email-infrastructure.md)
+
+---
+
 ## Using these patterns
 
 - Brief new engineers with the 3–4 most relevant to your app.
