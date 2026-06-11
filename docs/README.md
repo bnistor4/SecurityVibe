@@ -33,6 +33,21 @@
 | 17 | AI/LLM Security | [categories/17-ai-llm.md](categories/17-ai-llm.md) |
 | 18 | Dashboard Checks | [categories/18-dashboard-checks.md](categories/18-dashboard-checks.md) |
 | 19 | Regression Test Suite | [categories/19-regression-test-suite.md](categories/19-regression-test-suite.md) |
+| 20 | CSRF, CORS & Cross-origin | [categories/20-csrf-cors.md](categories/20-csrf-cors.md) |
+| 21 | Secrets & Key Management | [categories/21-secrets-management.md](categories/21-secrets-management.md) |
+| 22 | Supabase Edge Functions | [categories/22-supabase-edge-functions.md](categories/22-supabase-edge-functions.md) |
+| 23 | Logging & Monitoring | [categories/23-logging-monitoring.md](categories/23-logging-monitoring.md) |
+| 24 | Account Takeover & Identity | [categories/24-account-takeover.md](categories/24-account-takeover.md) |
+| 25 | Postgres Extensions & pg_graphql | [categories/25-postgres-extensions.md](categories/25-postgres-extensions.md) |
+| 26 | Security Headers & Cookies | [categories/26-security-headers-cookies.md](categories/26-security-headers-cookies.md) |
+| 27 | Business Logic & IDOR | [categories/27-business-logic-idor.md](categories/27-business-logic-idor.md) |
+
+## References
+
+- [Next.js / React CVE & advisory catalog](../references/nextjs-cve-catalog.md)
+- [OWASP mapping (Top 10 / API / LLM)](../references/owasp-mapping.md)
+- [Incident patterns (defensive case studies)](../references/incident-patterns.md)
+- [Verified sources](../references/sources.md)
 
 ## Supporting assets
 
@@ -41,4 +56,3 @@
 - [AI prompts](../prompts/)
 - [Detection scripts](../scripts/)
 - [RLS SQL queries](../sql/rls-audit.sql)
-- [References](../references/sources.md)

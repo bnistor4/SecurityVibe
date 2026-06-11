@@ -28,10 +28,27 @@ Use with [docs/audit-workflow.md](../docs/audit-workflow.md). Check categories i
 - [ ] **16** Supply chain — lockfile, scripts, secrets
 - [ ] **17** AI/LLM — if applicable
 
-## Phase 4 — External & tests
+## Phase 4 — Deep dives
+
+- [ ] **20** CSRF & CORS — cross-origin protections, cookie attributes
+- [ ] **21** Secrets — key boundaries, no client/log exposure, history scan
+- [ ] **22** Supabase Edge Functions — JWT verify, input, SSRF (if used)
+- [ ] **23** Logging & monitoring — redaction, security events, alerts
+- [ ] **24** Account takeover — reset/OAuth/session/MFA chains
+- [ ] **25** Postgres extensions — SECURITY DEFINER, pg_graphql, pg_net, pgvector
+- [ ] **26** Security headers & cookies — baseline headers, cookie flags
+- [ ] **27** Business logic & IDOR — object/function authz, state, races
+
+## Phase 5 — External & tests
 
 - [ ] **18** Dashboard checks — Supabase, Vercel, providers
 - [ ] **19** Regression tests — unit, RLS, E2E, ops
+
+## Cross-cutting references
+
+- [ ] Reconciled versions against [CVE catalog](../references/nextjs-cve-catalog.md)
+- [ ] Coverage mapped via [OWASP mapping](../references/owasp-mapping.md)
+- [ ] Reviewed relevant [incident patterns](../references/incident-patterns.md)
 
 ## Deliverables
 

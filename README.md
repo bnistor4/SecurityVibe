@@ -74,6 +74,20 @@ SecurityVibe/
 | 16 | AI/LLM (if applicable) | [17-ai-llm](docs/categories/17-ai-llm.md) |
 | 17 | Dashboard checks | [18-dashboard-checks](docs/categories/18-dashboard-checks.md) |
 | 18 | Regression test suite | [19-regression-test-suite](docs/categories/19-regression-test-suite.md) |
+| 19 | CSRF, CORS & cross-origin | [20-csrf-cors](docs/categories/20-csrf-cors.md) |
+| 20 | Secrets & key management | [21-secrets-management](docs/categories/21-secrets-management.md) |
+| 21 | Supabase Edge Functions | [22-supabase-edge-functions](docs/categories/22-supabase-edge-functions.md) |
+| 22 | Logging & monitoring | [23-logging-monitoring](docs/categories/23-logging-monitoring.md) |
+| 23 | Account takeover & identity | [24-account-takeover](docs/categories/24-account-takeover.md) |
+| 24 | Postgres extensions & pg_graphql | [25-postgres-extensions](docs/categories/25-postgres-extensions.md) |
+| 25 | Security headers & cookies | [26-security-headers-cookies](docs/categories/26-security-headers-cookies.md) |
+| 26 | Business logic & IDOR | [27-business-logic-idor](docs/categories/27-business-logic-idor.md) |
+
+## References
+
+- [Next.js / React CVE & advisory catalog](references/nextjs-cve-catalog.md)
+- [OWASP mapping (Top 10 / API / LLM)](references/owasp-mapping.md)
+- [Incident patterns (defensive case studies)](references/incident-patterns.md)
 
 ## Severity model
 
@@ -85,7 +99,7 @@ If you use Cursor, Copilot, Claude Code, or similar tools, read [AGENTS.md](AGEN
 
 ## Contributing
 
-Contributions welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributions welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Star History
 

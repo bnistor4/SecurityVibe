@@ -51,5 +51,13 @@ If no evidence is found, write:
 | 14 | [14-dos-cost-control.md](14-dos-cost-control.md) | DoS & cost control |
 | 15 | [15-supply-chain.md](15-supply-chain.md) | Supply chain & secrets |
 | 16 | [16-ai-llm.md](16-ai-llm.md) | AI/LLM security |
+| 17 | [17-csrf-cors.md](17-csrf-cors.md) | CSRF, CORS & cross-origin |
+| 18 | [18-secrets-management.md](18-secrets-management.md) | Secrets & key management |
+| 19 | [19-supabase-edge-functions.md](19-supabase-edge-functions.md) | Supabase Edge Functions |
+| 20 | [20-logging-monitoring.md](20-logging-monitoring.md) | Logging & monitoring |
+| 21 | [21-account-takeover.md](21-account-takeover.md) | Account takeover & identity |
+| 22 | [22-postgres-extensions.md](22-postgres-extensions.md) | Postgres extensions & pg_graphql |
+| 23 | [23-security-headers-cookies.md](23-security-headers-cookies.md) | Security headers & cookies |
+| 24 | [24-business-logic-idor.md](24-business-logic-idor.md) | Business logic & IDOR |
 
 Also read [../AGENTS.md](../AGENTS.md) before running prompts.
